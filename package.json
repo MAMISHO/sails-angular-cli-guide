@@ -42,6 +42,8 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.3.0",
     "codelyzer": "~3.2.0",
     "html-webpack-plugin": "^2.30.1",
     "jasmine-core": "~2.6.2",
@@ -53,6 +55,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "rimraf": "^2.6.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2",
@@ -61,7 +64,9 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "rimraf assets/dist && webpack --config assets/config/webpack.prod.js --bail",
+    "build:dev": "rimraf assets/dist && webpack --config assets/config/webpack.dev.js"
   },
   "main": "app.js",
   "repository": {
