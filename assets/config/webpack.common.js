@@ -15,7 +15,8 @@ module.exports = {
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.ts$/,
         loaders: [{
           loader: 'awesome-typescript-loader',
@@ -32,20 +33,20 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader?name=../assets/app/assets/[name].[hash].[ext]'
       },
-      {
-        use: ['style-loader', 'css-loader'],
-        test: /\.css$/
-      }
       // {
-      //   test: /\.css$/,
-      //   exclude: helpers.root('src', 'app'),
-      //   loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
-      // },
-      // {
-      //   test: /\.css$/,
-      //   include: helpers.root('src', 'app'),
-      //   loader: 'raw-loader'
+      //   use: ['style-loader', 'css-loader'],
+      //   test: /\.css$/
       // }
+      {
+        test: /\.css$/,
+        exclude: helpers.root('assets', 'app/app'),
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+      },
+      {
+        test: /\.css$/,
+        include: helpers.root('src', 'app/app'),
+        loader: 'raw-loader'
+      }
     ]
   },
 
@@ -54,7 +55,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      helpers.root('./assets'), // location of your src
+      helpers.root('./assets/app'), // location of your src
       {} // a map of your routes
     ),
 

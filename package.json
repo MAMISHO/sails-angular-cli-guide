@@ -45,8 +45,8 @@
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.3.0",
     "codelyzer": "~3.2.0",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
@@ -61,12 +61,13 @@
     "protractor": "~5.1.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.19.0",
+    "style-loader": "^0.13.1",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2",
-    "webpack": "^3.8.1",
-    "webpack-merge": "^4.1.1"
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1",
+    "webpack-merge": "^3.0.0"
   },
   "scripts": {
     "debug": "node debug app.js",
