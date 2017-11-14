@@ -30,18 +30,22 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=../assets/[name].[hash].[ext]'
+        loader: 'file-loader?name=../assets/app/assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
       }
+      // {
+      //   test: /\.css$/,
+      //   exclude: helpers.root('src', 'app'),
+      //   loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+      // },
+      // {
+      //   test: /\.css$/,
+      //   include: helpers.root('src', 'app'),
+      //   loader: 'raw-loader'
+      // }
     ]
   },
 
@@ -59,7 +63,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: 'assets/index.html'
+      template: 'assets/app/index.html'
     })
   ]
 };
