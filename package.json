@@ -66,12 +66,14 @@
     "tslint": "~5.7.0",
     "typescript": "~2.4.2",
     "webpack": "2.2.1",
+    "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "2.4.1",
+    "webpack-hot-middleware": "^2.20.0",
     "webpack-merge": "^3.0.0"
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js",
+    "start": "sails lift --dev",
     "build": "rimraf assets/dist && webpack --config assets/config/webpack.prod.js --bail",
     "build:dev": "rimraf assets/dist && webpack --config assets/config/webpack.dev.js"
   },
