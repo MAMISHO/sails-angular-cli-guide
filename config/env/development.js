@@ -20,22 +20,4 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-
-  http: {
-    customMiddleware: function (app) {
-      var webpack = require('webpack');
-      var webpackConfig = require('../../assets/config/webpack.dev');
-      var compiler = webpack(webpackConfig);
-
-      app.use(require("webpack-dev-middleware")(compiler,
-        {
-          noInfo: true,
-          publicPath: webpackConfig.output.publicPath
-        }
-      ));
-      app.use(require("webpack-hot-middleware")(compiler,
-        { reload: true }
-      ));
-    },
-  }
 };
