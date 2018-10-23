@@ -59,14 +59,14 @@
     "npm-run-all": "^4.1.1",
     "protractor": "~5.3.0",
     "rimraf": "^2.6.2",
-    "sails-hook-autoreload": "^1.1.0",
+    "sails-hook-autoreload": "^0.14.3",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1"
   },
   "scripts": {
     "start": "npm-run-all --parallel open:client dev",
     "start:debug": "npm-run-all --parallel open:client debug",
-    "open:client": "ng serve --open",
+    "open:client": "ng serve --proxy-config proxy.conf.json --open",
     "build": "npm run build:prod",
     "build:dev": "ng build --deploy-url=dist",
     "build:prod": "ng build --prod --deploy-url=dist",
